@@ -1,1 +1,11 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: sunset --default, lemonade --prefersdark, forest;
+}
+@plugin "daisyui/theme" {
+  name: "lemonade";
+  default: true;
+
+  --color-secondary: red;
+  --color-secondary-content: blue; /* or any readable text color */
+}

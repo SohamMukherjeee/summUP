@@ -1,16 +1,25 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/Login.jsx";
-import Dash from "./components/Dashpage.jsx";
-import Dashright from "./components/Dashright.jsx";
+import HowItWorks from "./components/HowItWorks.jsx";
+import AfterText from "./components/AfterText.jsx";
+import SharedSummary from "./components/SharedSummary.jsx";
+import PrivateRoute from "./components/PrivateRout.jsx";
 import "./index.css";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashright />} /> {/* Correct path */}
+        <Route path="/" element={<HowItWorks />} />
+        <Route
+          path="/summarize"
+          element={
+            <PrivateRoute>
+              <AfterText />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/news" element={<SharedSummary />} />
       </Routes>
     </Router>
   );
