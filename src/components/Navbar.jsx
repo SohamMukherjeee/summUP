@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./auth";
 import { IoLogOutOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo2-removebg-preview.png";
 
 function Navbar() {
   const toggleTheme = (e) => {
@@ -35,8 +36,9 @@ function Navbar() {
         {user?.displayName ? (
           `👋 ${user.displayName}`
         ) : (
-          <span>
-            Summ<span className="text-red-400">UP</span>
+          <span className="flex items-center justify-center flex-row gap-x-1">
+            <img src={logo} className="w-7 h-10 inline-block" alt="Logo" />
+            {/* Summ<span className="text-red-400">UP</span> */}
           </span>
         )}
       </h1>

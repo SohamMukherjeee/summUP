@@ -15,7 +15,7 @@ function BeforeText() {
           <div className="bg-white/10   border border-black/15  rounded-3xl shadow-lg p-6 flex flex-col justify-between  hover:shadow-2xl transition-all duration-300">
             <div>
               <h3 className="text-2xl font-semibold mb-4">Original Version</h3>
-              <p className="text-sm  leading-relaxed max-h-[300px] sm:max-h-[600px] overflow-y-auto whitespace-pre-line px-1 scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
+              <p className="text-sm  leading-relaxed max-h-[300px] sm:max-h-[300px] overflow-y-auto whitespace-pre-line px-1 scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
                 Artificial intelligence is making our lives easier. Popular AI
                 tools such as ChatGPT, Google Gemini, Claude, and Perplexity AI
                 have all become personal assistants to millions of working
@@ -129,7 +129,7 @@ function BeforeText() {
               <h3 className="text-2xl font-semibold mb-4">
                 Summarized Version
               </h3>
-              <p className="text-sm leading-relaxed max-h-[300px] sm:max-h-[600px] overflow-y-auto whitespace-pre-line px-1 scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
+              <p className="text-sm leading-relaxed max-h-[300px] sm:max-h-[300px] overflow-y-auto whitespace-pre-line px-1 scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
                 Artificial intelligence tools like ChatGPT, Google Gemini, and
                 Perplexity AI have become popular personal assistants for many
                 professionals and students. However, the quality of the prompts

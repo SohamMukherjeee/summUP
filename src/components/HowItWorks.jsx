@@ -20,6 +20,9 @@ import {
 import { useNavigate } from "react-router-dom";
 import { auth } from "./auth";
 import Bentogrid from "./Bentogrid";
+import Share from "./Share";
+import logo from "../assets/logo2-removebg-preview.png";
+
 function HowItWorks() {
   useEffect(() => {
     AOS.init({
@@ -73,13 +76,21 @@ function HowItWorks() {
           </div>
 
           <div data-aos="fade-down">
-            <h1 className="font-bold text-4xl sm:text-6xl my-3 text-center">
-              Instantly <span className="text-red-400">Summarize</span>
+            <h1 className="font-bold text-3xl sm:text-6xl my-3 text-center">
+              <span className="inline-flex items-center justify-center gap-3">
+                Instantly
+                <img
+                  src={logo}
+                  className="w-8 sm:w-12 h-12 sm:h-16 inline-block"
+                  alt="Logo"
+                />
+                <span className="text-red-400 italic">Summarize</span>
+              </span>
               <br /> Any News Article
             </h1>
           </div>
 
-          <p className="text-md sm:text-xl text-center my-5 px-3 sm:px-0">
+          <p className="text-md sm:text-xl text-center my-5 px-3 sm:px-0 font-serif">
             Transform lengthy news articles into concise, actionable summaries
             in seconds. <br />
             Stay informed without the overwhelm.
@@ -139,7 +150,8 @@ function HowItWorks() {
       <div className="flex justify-center items-center w-full p-5  sm:p-20">
         <BeforeText />
       </div>
-      <div className="flex justify-center items-center w-full p-5  sm:p-20">
+      <div className="flex justify-center items-center flex-col  w-full p-5 gap-y-5 ">
+        <Share button={googleLogin} />
         <Bentogrid />
       </div>
       <Element name="howItWorks">
@@ -168,16 +180,6 @@ function HowItWorks() {
                 </p>
               </li>
             </ul>
-          </div>
-          <div className="aspect-video w-70 sm:w-200 rounded-lg h-40 sm:h-90 border-4">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/bSrm9RXwBaI"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
           </div>
         </div>
         <Footer />
