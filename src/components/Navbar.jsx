@@ -7,12 +7,12 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo2-removebg-preview.png";
 
 function Navbar() {
-  const toggleTheme = (e) => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      e.target.checked ? "sunset" : "lemonade"
-    );
-  };
+  // const toggleTheme = (e) => {
+  //   document.documentElement.setAttribute(
+  //     "data-theme",
+  //     e.target.checked ? "sunset" : "lemonade"
+  //   );
+  // };
   const [user, setUser] = useState(null);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (u) => {
@@ -31,29 +31,25 @@ function Navbar() {
     }
   };
   return (
-    <div className="w-screen flex flex-row items-center justify-between px-6 py-4 bg-base-100 shadow-md">
-      <h1 className="text-2xl font-bold">
+    <div className="w-screen flex flex-row items-center justify-between px-6 py-4 shadow-md bg-[#F2F1ED]">
+      <h1 className="text-2xl font-bold text-gray-700">
         {user?.displayName ? (
           `👋 ${user.displayName}`
         ) : (
-          <span className="flex items-center justify-center flex-row gap-x-1">
+          <span className="flex items-center justify-center flex-row gap-x-1 ">
             <img src={logo} className="w-7 h-10 inline-block" alt="Logo" />
             {/* Summ<span className="text-red-400">UP</span> */}
           </span>
         )}
       </h1>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 text-gray-700 pr-5">
         {user && (
-          <button onClick={handleLogout}>
-            <IoLogOutOutline className="text-2xl cursor-pointer" />
-          </button>
+          <div className="tooltip tooltip-bottom" data-tip="logout">
+            <button onClick={handleLogout}>
+              <IoLogOutOutline className="text-2xl cursor-pointer" />
+            </button>
+          </div>
         )}
-        <input
-          type="checkbox"
-          onChange={toggleTheme}
-          className="toggle"
-          aria-label="Toggle Theme"
-        />
       </div>
     </div>
   );
