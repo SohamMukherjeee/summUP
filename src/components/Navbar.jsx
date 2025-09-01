@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./auth";
@@ -34,9 +34,12 @@ function Navbar() {
     <div className="w-screen flex flex-row items-center justify-between px-6 py-4 shadow-md bg-[#F2F1ED]">
       <h1 className="text-2xl font-bold text-gray-700">
         {user?.displayName ? (
-          `👋 ${user.displayName}`
+          <span className="flex items-center gap-x-2">
+            <span className="animate-bounce text-3xl">👋</span>
+            {user.displayName}
+          </span>
         ) : (
-          <span className="flex items-center justify-center flex-row gap-x-1 ">
+          <span className="flex items-center justify-center flex-row gap-x-1">
             <img src={logo} className="w-7 h-10 inline-block" alt="Logo" />
             {/* Summ<span className="text-red-400">UP</span> */}
           </span>

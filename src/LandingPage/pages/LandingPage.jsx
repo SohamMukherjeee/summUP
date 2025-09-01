@@ -9,8 +9,7 @@ import BGrid from "../componentPage/BGrid";
 import SumMoving from "../componentPage/SumMoving";
 import FakeBoxInput from "../componentPage/FakeBoxInput";
 import Footer from "../../components/Footer";
-import MopeUp from "../componentPage/MopeUp";
-// for auth
+// for auth b
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -68,7 +67,7 @@ function LandingPage() {
           patternAlpha={30}
         />
 
-        <div className="relative w-[90vw] h-[700px] mx-10 mt-[60px] sm:mt-[110px] bg-white rounded-xl shadow-lg flex px-12 py-10 flex-col sm:flex-row ">
+        <div className="relative w-[90vw] h-[700px] mx-10 mt-[80px] sm:mt-[110px] bg-white rounded-xl shadow-lg flex px-12 py-10 flex-col sm:flex-row ">
           <div
             className="absolute inset-0 z-0 pointer-events-none"
             style={{
