@@ -42,14 +42,22 @@
 
 // export default SummarizeArticle;
 
+import { auth } from "./auth";
+
 const SummarizeArticle = async (url) => {
   try {
+    const user = auth.currentUser;
+    if (!user) throw new Error("User not logged in");
+
+    const idToken = await user.getIdToken();
+
     const response = await fetch(
       `${import.meta.env.VITE_PRO_BACKEND_URL}/extract`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
         },
         body: JSON.stringify({ url }),
       }
