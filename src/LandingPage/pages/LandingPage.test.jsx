@@ -3,7 +3,7 @@ import {fireEvent, render,screen, waitFor} from '@testing-library/react';
 import LandingPage from './LandingPage';
 import {describe,it,expect,vi, beforeEach} from "vitest";
 import '@testing-library/jest-dom/vitest';
-import { signInWithPopup } from 'firebase/auth';
+import { onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 
 vi.mock("react-router-dom", () => ({
   useNavigate: () => vi.fn(),  // prevent real navigation
@@ -74,5 +74,13 @@ describe('LandingPage',()=>{
             expect(buttonElement[0]).not.toBeDisabled();
         })
     })
+
+    it("redirects if user already logged in",()=>{
+    (onAuthStateChanged).mockImplementation((auth, cb) => {
+      cb({ uid: "123" });
+      return vi.fn(); 
+        })
+    })
+    
 
 });
