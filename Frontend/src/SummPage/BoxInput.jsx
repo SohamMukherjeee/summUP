@@ -130,6 +130,7 @@ Do you accept these terms and wish to continue?
             }}
           >
             summup
+            <span className="inline-block align-middle text-red-400">.</span>
           </h1>
           <p className="text-lg  text-gray-400 text-center font-sans">
             Transform lengthy content into concise, meaningful summaries
